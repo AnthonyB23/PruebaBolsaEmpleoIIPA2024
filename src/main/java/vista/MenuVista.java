@@ -31,7 +31,7 @@ public class MenuVista extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jmnPostulante = new javax.swing.JMenuItem();
         mniEmpleador = new javax.swing.JMenuItem();
-        mniAutor = new javax.swing.JMenuItem();
+        mniLibro = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         mniCargar = new javax.swing.JMenuItem();
 
@@ -66,13 +66,13 @@ public class MenuVista extends javax.swing.JFrame {
         });
         jMenu1.add(mniEmpleador);
 
-        mniAutor.setText("Autores");
-        mniAutor.addActionListener(new java.awt.event.ActionListener() {
+        mniLibro.setText("Libros");
+        mniLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mniAutorActionPerformed(evt);
+                mniLibroActionPerformed(evt);
             }
         });
-        jMenu1.add(mniAutor);
+        jMenu1.add(mniLibro);
 
         jMenuBar1.add(jMenu1);
 
@@ -128,13 +128,13 @@ public class MenuVista extends javax.swing.JFrame {
         
     }//GEN-LAST:event_mniCargarActionPerformed
 
-    private void mniAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniAutorActionPerformed
+    private void mniLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniLibroActionPerformed
         // TODO add your handling code here:
-        AutorVista av=new AutorVista();
+        LibroVista av=new LibroVista();
         jdpVista.add(av);
         av.show();
                 
-    }//GEN-LAST:event_mniAutorActionPerformed
+    }//GEN-LAST:event_mniLibroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,8 +177,8 @@ public class MenuVista extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JDesktopPane jdpVista;
     private javax.swing.JMenuItem jmnPostulante;
-    private javax.swing.JMenuItem mniAutor;
     private javax.swing.JMenuItem mniCargar;
     private javax.swing.JMenuItem mniEmpleador;
+    private javax.swing.JMenuItem mniLibro;
     // End of variables declaration//GEN-END:variables
 }

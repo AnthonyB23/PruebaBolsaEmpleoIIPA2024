@@ -11,16 +11,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.AutorModelo;
+import modelo.LibroModelo;
 
 
 /**
  *
  * @author Usuario
  */
-public class AutorControlador {
+public class LibroControlador {
 
     //INSTANCIO UN OBJETO DEL MODELO A INSERTAR
-    private AutorModelo a;
+    private LibroModelo lm;
     //INSTANCIAR LA CONEXIÓN A LA BASE DE DATOS
     ConexionBDD conectar = new ConexionBDD();
     //CLASE QUE ME PERMITA CONECTARME DIRECTAMENTE A MYSQL
@@ -32,20 +33,20 @@ public class AutorControlador {
 
     //MÉTODOS DE TRANSACCIONABILIDAD
     
-    public ArrayList<Object[]> buscarEmpleador(String p_cedula) {
+    public ArrayList<Object[]> buscarLibro(String p_cedula) {
             ArrayList<Object[]> listaObject=new ArrayList<>();
         try {
-            String sql = "call sp_BuscarEmpleador('%"+p_cedula+"%');";
+            String sql = "call sp_buscarLibrosAutor('"+p_cedula+"');";
             ejecutar = (PreparedStatement) conectado.prepareCall(sql);
             resultado = ejecutar.executeQuery();
             int cont = 1;
             while (resultado.next()) {
-                Object[] obempleador = new Object[9];
-                for (int i = 0; i <8; i++) {
-                    obempleador[i+1] = resultado.getObject(i+1);
+                Object[] oblibro = new Object[5];
+                for (int i = 0; i <4; i++) {
+                    oblibro[i+1] = resultado.getObject(i+1);
                 }
-                obempleador[0]=cont;
-                listaObject.add(obempleador);
+                oblibro[0]=cont;
+                listaObject.add(oblibro);
                 cont++;
             }
             ejecutar.close();
@@ -57,33 +58,7 @@ public class AutorControlador {
         return null;
     }
     
-    public ArrayList<Object[]> datosEmpleadores() {
-        ArrayList<Object[]> listaObject=new ArrayList<>();
-        
-        try {
-            String sql = "call sp_ListarEmpleador();";
-            ejecutar = (PreparedStatement) conectado.prepareCall(sql);
-            resultado = ejecutar.executeQuery();
-            int cont = 1;
-            while (resultado.next()) {
-                Object[] obempleador = new Object[9];
-                for (int i = 0; i < 8; i++) {
-                    obempleador[i+1] = resultado.getObject(i+1);
-                }
-                obempleador[0]=cont;
-                listaObject.add(obempleador);
-                cont++;
-            }
-            ejecutar.close();
-            return listaObject;
-
-        } catch (SQLException p) {
-            System.out.println("ERROR SQL CARGA EMPLEADORES");
-
-        }
-
-        return null;
-    }
+    
     
 
 }

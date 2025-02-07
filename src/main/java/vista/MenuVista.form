@@ -25,12 +25,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mniEmpleadorActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mniAutor">
+            <MenuItem class="javax.swing.JMenuItem" name="mniLibro">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Autores"/>
+                <Property name="text" type="java.lang.String" value="Libros"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mniAutorActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mniLibroActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
